@@ -6,14 +6,18 @@ void main() {
 var a = Class_a("zeki","yılmaz","123334");
 var b = Class_a("hasan","arslan","667765");
 var c = Class_a("ahmet","tokgöz","134454");
+var d = Class_a("günay","çakır","123334");
+var e = Class_a("ayşe","evgin","667765");
+var f = Class_a("hatice","tuman","134454");
+
 
 var ty = <Class_a>[];
 ty.add(a);
 ty.add(b);
 ty.add(c);
-
-
-
+ty.add(d);
+ty.add(e);
+ty.add(f);
 
 
 for(var t in ty)
@@ -26,7 +30,6 @@ print('************İsme Göre Sıralama**********');
   Comparator <Class_a> adSiralama = (x,y) => x.ad.compareTo(y.ad);
 
   ty.sort(adSiralama);
-
 
 for(var t in ty)
 {
@@ -41,6 +44,20 @@ ty.sort(idSiralama);
 
 
 for(var t in ty)
+{
+  print("Ad: "+t.ad+" Soyad: "+t.soyad+" Id: "+t.id);
+}
+
+print('***********Names of which first letter is h *********');
+
+Iterable <Class_a> first_letter_h = ty.where((ty) {
+
+  String fefe=ty.ad;
+
+  return fefe[0]=='h';
+});
+
+for(var t in first_letter_h)
 {
   print("Ad: "+t.ad+" Soyad: "+t.soyad+" Id: "+t.id);
 }
